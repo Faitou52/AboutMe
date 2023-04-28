@@ -2,22 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
-  <style>
-    body {
-      background-color: white;
-    }
-  </style>
   <body>
-    <h1 id="message">Who is Faitou?</h1>
-    <div>
-      <button style="color: blueviolet" id="aboutMe">About Me</button>
-      <p class="paragraph"></p>
-      <img class="img" width="30%" />
-    </div>
+    <header>
+      <h1>Faitou Lor</h1>
+    </header>
+
+    <main>
+      <section id="about-me">
+        <h2>Who is Faitou?</h2>
+        <h3>An intern at i.c.stars |* Milwaukee.</h3>
+        <div id="about-content">
+          <p class="paragraph"></p>
+          <div class="photo-wrapper">
+            <img src="image0.jpeg" class="img hidden" id="photo" width="30%" />
+          </div>
+          <button id="photo-button">Show Photo</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2023 Faitou Lor. All rights reserved.</p>
+    </footer>
+
     <script src="functions.js"></script>
+    <script>
+      var button = document.getElementById("photo-button");
+      var photo = document.getElementById("photo");
+
+      button.addEventListener("click", function () {
+        photo.classList.toggle("hidden");
+        if (photo.classList.contains("hidden")) {
+          button.textContent = "Show Photo";
+        } else {
+          button.textContent = "Hide Photo";
+        }
+      });
+    </script>
   </body>
 </html>
